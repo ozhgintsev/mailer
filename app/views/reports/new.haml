@@ -1,0 +1,15 @@
+= form_for @report, :style => "width:400px;" do |f|
+  .field
+    = f.label :user_name, "Name"
+  .field
+    = f.text_field :user_name, :value => current_user.name, :style => "color: #111;"
+  .field
+    = f.label :email, "Email"
+  .field
+    = f.text_field :email, :value => current_user.email, :style => "color: #111;"
+  .field
+    = f.label :question, "Message"
+  .field
+    = f.text_area :question, :style => "color: #111;"
+  .field
+    %button.button Send

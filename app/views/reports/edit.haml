@@ -1,0 +1,7 @@
+= form_for @report, :style => "width:400px;" do |f|
+  .field
+    = f.label :answer, "Message"
+  .field
+    = f.text_area :answer, :style => "color: #111;"
+  .field
+    %button.button Send

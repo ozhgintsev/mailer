@@ -1,0 +1,14 @@
+- if @reports.blank?
+  %p No new messages
+- @reports.each do |report|
+  %p
+    = report.user_name
+    |
+    = report.email
+    |
+    = report.created_at.strftime("%B %d, %Y")
+    |
+    = link_to 'Response', edit_report_path(report)
+  %p
+    = report.question
+  %hr
