@@ -31,6 +31,7 @@ class ReportsController < ApplicationController
       if @report.update_attributes(params[:report])
         @report.status = 1
         @report.save
+        NotificationsMailer.new_message(@report).deliver
         format.html { redirect_to reports_path }
       else
         format.html { render 'edit' }
